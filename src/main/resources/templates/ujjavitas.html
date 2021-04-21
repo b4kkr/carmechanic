@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Új javítás felvétele</title>
+</head>
+<body>
+
+    <form action="#" th:object="${javitas}" th:action="@{/javitasok/uj/mentes}" method="post">
+        <input type="text" placeholder="Autós neve" th:field="*{autos.nev}" required>
+        <input type="text" placeholder="Szerelő neve" th:field="*{szerelo.nev}" required>
+        <input type="number" th:field="*{iranyar}" min="1000" max="100000" step="500" placeholder="Ár" required>
+        <input type="number" th:field="*{javido}" required>
+        <input type="submit">
+    </form>
+
+</body>
+</html>

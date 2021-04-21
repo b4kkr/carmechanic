@@ -5,7 +5,19 @@
     <title>Autó Szerelő</title>
 </head>
 <body>
-
+    <div>
+        <a th:href="@{/javitasok/mentes}">Javítások kiírása CSV fájlba</a>
+    </div>
+    <div>
+        <a th:href="@{/javitasok/uj}">Új javítás felvétele</a>
+    </div>
+    <div>
+        <form action="#" th:action="@{/javitasok/szures}" method="post" th:object="${javitasSzur}">
+            <input type="text" th:field="*{szerelo.nev}" placeholder="Szerelő neve" required>
+            <input type="number" th:field="*{iranyar}" min="5000" max="100000" step="1000" placeholder="Minimum ár" required>
+            <input type="submit">
+        </form>
+    </div>
     <table border="1">
         <thead>
             <td>Javítás sorszáma</td>

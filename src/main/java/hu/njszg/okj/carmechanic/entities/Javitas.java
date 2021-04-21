@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,6 +25,7 @@ public class Javitas {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "javitas_id")
     private Long id;
+    @Column(columnDefinition = "DATE")
     private LocalDate datum;
     private int javido;
     private int iranyar;
