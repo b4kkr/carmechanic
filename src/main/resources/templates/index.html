@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Autó Szerelő</title>
+</head>
+<body>
+
+    <table border="1">
+        <thead>
+            <td>Javítás sorszáma</td>
+            <td>Autós neve</td>
+            <td>Autó típusa</td>
+            <td>Javítás dátuma</td>
+            <td>Ár</td>
+            <td>Megtekint</td>
+        </thead>
+
+        <tbody>
+            <tr th:each="javitas : ${javitasok}">
+                <td th:text="${javitas.id}"></td>
+                <td th:text="${javitas.autos.nev}"></td>
+                <td th:text="${javitas.autos.tipus.tipusnev}"></td>
+                <td th:text="${javitas.datum}"></td>
+                <td th:text="${javitas.iranyar}"></td>
+                <td>
+                    <a th:href="@{/javitasok/javitas/{id}(id=${javitas.id})}">Megtekint</a>
+                    <!--localhost:8080/javitasok/javitas/2-->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
